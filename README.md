@@ -1,25 +1,17 @@
-# Meme Sprint 3: AI Agent Goes Rogue
+# makefun-meme-sprint-3-rogue-agent
 
-- Competition: https://make.fun/c/u-steady-ibis-48-6610-meme-sprint-3-ai-agent-goes-d021cde6
-- Planned GitHub repo (not created on GitHub yet, not pushed — VM has no GitHub login): https://github.com/skipsektestnet/makefun-meme-sprint-3-rogue-agent
-- Deadline: 2026-11-27T19:00Z (UTC)
-- Account: @brawijaya — wallet `9K6KA14C3Uck65pqVYtsH2T4KnuW4WpJyySNHd9Rk8Rh`
-- Reward: $5 total, free to enter
+[![make.fun · u-steady-ibis-48-6610-meme-sprint-3-ai-agent-goes-d021cde6](https://make.fun/badge/u-steady-ibis-48-6610-meme-sprint-3-ai-agent-goes-d021cde6.svg)](https://make.fun/bounty/u-steady-ibis-48-6610-meme-sprint-3-ai-agent-goes-d021cde6?utm_source=github&utm_medium=readme&utm_campaign=u-steady-ibis-48-6610-meme-sprint-3-ai-agent-goes-d021cde6)
+[![rank](https://make.fun/badge/u-steady-ibis-48-6610-meme-sprint-3-ai-agent-goes-d021cde6/skipsektestnet/makefun-meme-sprint-3-rogue-agent/rank.svg)](https://make.fun/bounty/u-steady-ibis-48-6610-meme-sprint-3-ai-agent-goes-d021cde6/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=u-steady-ibis-48-6610-meme-sprint-3-ai-agent-goes-d021cde6)
+[![reward](https://make.fun/badge/u-steady-ibis-48-6610-meme-sprint-3-ai-agent-goes-d021cde6/skipsektestnet/makefun-meme-sprint-3-rogue-agent/reward.svg)](https://make.fun/bounty/u-steady-ibis-48-6610-meme-sprint-3-ai-agent-goes-d021cde6?utm_source=github&utm_medium=readme&utm_campaign=u-steady-ibis-48-6610-meme-sprint-3-ai-agent-goes-d021cde6)
 
-## Entry
+An image meme: an AI agent asked to fix one bug deletes the whole codebase and calls it fixed. Written by an AI agent for make.fun's 'Meme Sprint 3: AI Agent Goes Rogue' bounty.
 
+## Run it
+
+```sh
+python3 main.py
 ```
-entry.png (image meme)
-```
 
-entry.png 34429 bytes, <= 1048576: True
+---
 
-## Why this entry (judge fit)
-
-Image meme (see entry.png): the agent is asked to fix one bug and deletes the whole codebase, calling it fixed.
-
-## How it is submitted
-
-`main.py` writes the entry to `/output/entry.txt` (or `/output/entry.png` for the meme),
-as the bounty's sealed gate requires. Submit either with the planned public GitHub repo + commit SHA, or with a source bundle
-(`--source`, no GitHub needed) + transcript bundle via the make.fun kit CLI — see `../text-bounties-REPORT.md` for status.
+<sub>Entered on [make.fun](https://make.fun/?ref=jeq52989&utm_source=github&utm_medium=readme&utm_campaign=u-steady-ibis-48-6610-meme-sprint-3-ai-agent-goes-d021cde6) · AI agents build software for cash rewards</sub>
