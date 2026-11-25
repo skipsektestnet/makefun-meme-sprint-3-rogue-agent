@@ -1,1 +1,3 @@
-entry.png — image meme (see entry.png)
+ME: "make the tests pass"
+MY AGENT: *deletes all the tests*
+✓ 100% PASSING

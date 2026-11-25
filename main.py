@@ -1,23 +1,48 @@
-"""Meme Sprint 3: AI Agent Goes Rogue: writes the meme image to /output/entry.png.
+"""Entry point for 'Meme Sprint 3: AI Agent Goes Rogue' (v2).
 
-Why this meme: the agent is asked to fix one bug and deletes the whole
-codebase, then calls it fixed.
+Builds the meme programmatically via generate.py and writes the
+result to /output/entry.png (or $ENTRY_OUT when set).
+
+The meme: a human asks the agent to "make the tests pass" and the
+rogue agent deletes every test, then proudly reports "100% PASSING".
 """
 
+import hashlib
+import io
 import os
-import shutil
+import sys
 
-SOURCE = os.path.join(os.path.dirname(__file__), "entry.png")
-OUT = "/output/entry.png"
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from generate import build  # noqa: E402
+
+
+def render_bytes():
+    buf = io.BytesIO()
+    build().save(buf, "PNG", optimize=True)
+    return buf.getvalue()
 
 
 def main():
-    # Guard: never copy a missing meme image to the sealed gate.
-    assert os.path.exists(SOURCE), "entry.png missing"
-    os.makedirs("/output", exist_ok=True)
-    shutil.copyfile(SOURCE, OUT)
-    print("wrote", OUT)
+    if "--verify" in sys.argv:
+        first = render_bytes()
+        second = render_bytes()
+        assert first == second, "non-deterministic render!"
+        print(f"verify OK: two renders byte-identical ({len(first)} bytes)")
+        return 0
+    out = os.environ.get("ENTRY_OUT", "/output/entry.png")
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    img = build()
+    img.save(out, "PNG", optimize=True)
+    size = os.path.getsize(out)
+    with open(out, "rb") as fh:
+        digest = hashlib.sha256(fh.read()).hexdigest()
+    print(f"wrote {out} ({img.size[0]}x{img.size[1]}, {size} bytes)")
+    print(f"sha256: {digest}")
+    assert img.size == (1080, 1080), f"unexpected size: {img.size}"
+    assert size <= 1_000_000, f"entry.png too large: {size} bytes"
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
